@@ -1,0 +1,11 @@
+{
+	"UniqueModName": "valid_QM_CloneSort",
+	"Assemblies": [
+		"QM_CloneSort.dll"
+	],
+	"Dependencies": [],
+    "SteamTags": [
+        "Quality of Life",
+        "0.9.9"
+    ]
+}

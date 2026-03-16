@@ -1,0 +1,11 @@
+# Visual Studio files
+src/.vs/
+src/bin
+src/obj
+*.sln
+
+# VSCode files
+*.code-workspace
+
+# Generated files
+SteamReadMe.txt
