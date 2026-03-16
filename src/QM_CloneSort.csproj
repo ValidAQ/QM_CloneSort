@@ -7,7 +7,6 @@
   </PropertyGroup>
   <PropertyGroup>
     <SteamId Condition="'$(SteamId)'=='' and Exists('../SteamWorkshopId.txt')">$([System.IO.File]::ReadAllText('$(MSBuildThisFileDirectory)../SteamWorkshopId.txt').Trim())</SteamId>
-    <LocalTestSteamId>3685994950</LocalTestSteamId>
   </PropertyGroup>
   <PropertyGroup>
     <GAME_NAME>Quasimorph</GAME_NAME>
@@ -17,11 +16,9 @@
     <GAME_PATH Condition="!Exists('$(GAME_PATH)')">C:\Program Files\Steam\steamapps\common\$(GAME_NAME)</GAME_PATH>
     <GAME_PATH Condition="!Exists('$(GAME_PATH)')">C:\Program Files (x86)\Steam\steamapps\common\$(GAME_NAME)</GAME_PATH>
     <GAME_PATH Condition="!Exists('$(GAME_PATH)')">D:\SteamLibrary\steamapps\common\$(GAME_NAME)</GAME_PATH>
-    <WorkshopRoot>$(GAME_PATH)\..\..\workshop\content\2059170\</WorkshopRoot>
+    <WorkshopRoot>$([System.IO.Path]::GetFullPath('$(GAME_PATH)\..\..\workshop\content\2059170\'))</WorkshopRoot>
     <WorkshopPath>$(WorkshopRoot)$(SteamId)\</WorkshopPath>
-    <LocalTestWorkshopPath Condition="'$(LocalTestSteamId)'!=''">$(WorkshopRoot)$(LocalTestSteamId)\</LocalTestWorkshopPath>
     <DeployPath Condition="'$(SteamId)'!=''">$(WorkshopPath)</DeployPath>
-    <DeployPath Condition="'$(DeployPath)'=='' and '$(LocalTestSteamId)'!=''">$(LocalTestWorkshopPath)</DeployPath>
     <ManagedPath>$(GAME_PATH)\$(GAME_NAME)_Data\Managed\</ManagedPath>
     <PackageFolder>$(ProjectDir)../package/</PackageFolder>
   </PropertyGroup>
@@ -82,11 +79,7 @@
   </Target>
 
   <Target Name="NoDeployMessage" Condition="'$(DeployPath)'==''" AfterTargets="PostBuildEvent">
-    <Message Importance="high" Text="Neither SteamId nor LocalTestSteamId is set. Skipping workshop-folder deployment." />
-  </Target>
-
-  <Target Name="LocalTestDeployMessage" Condition="'$(SteamId)'=='' and '$(LocalTestSteamId)'!=''" AfterTargets="PostBuildEvent">
-    <Message Importance="high" Text="Local test deployment enabled. Target folder: $(DeployPath)" />
+    <Message Importance="high" Text="SteamId not set. Skipping workshop-folder deployment." />
   </Target>
 
   <Target Name="SteamWorkshopDeploy" Condition="'$(DeployPath)'!=''" AfterTargets="PostBuildEvent">
@@ -95,6 +88,7 @@
     </ItemGroup>
     <MakeDir Directories="$(DeployPath)" ContinueOnError="true" />
     <Copy SourceFiles="@(BuildSource)" DestinationFolder="$(DeployPath)" />
+    <WriteLinesToFile File="$(MSBuildProjectDirectory)/.vs/.workshop_path.tmp" Lines="$(WorkshopPath)" Overwrite="true" />
   </Target>
 
   <ItemGroup>

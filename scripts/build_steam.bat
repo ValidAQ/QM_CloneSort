@@ -29,3 +29,14 @@ if %errorlevel% neq 0 (
     exit /b %errorlevel%
 )
 echo Build and deploy to Steam workshop %STEAM_ID% succeeded.
+
+REM Read the workshop content path resolved by MSBuild during the build.
+set WORKSHOP_PATH=
+if exist src\.vs\.workshop_path.tmp (
+    set /p WORKSHOP_PATH=<src\.vs\.workshop_path.tmp
+)
+if not "%WORKSHOP_PATH%"=="" (
+    echo.
+    echo To publish this version, run in the in-game console:
+    echo   mod_updateworkshopitem %STEAM_ID% %WORKSHOP_PATH% TRUE
+)
