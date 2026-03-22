@@ -9,7 +9,7 @@ namespace QM_CloneSort
     {
         public static bool TryMoveByProfileId(SelectMercenaryScreen screen, string profileId, int delta)
         {
-            if (screen == null || delta == 0 || CloneSortState.SortMode != SortMode.Manual)
+            if (screen == null || delta == 0 || CloneSortState.SortMode != SortMode.Manual || CloneSortState.IsManualLocked)
             {
                 return false;
             }
@@ -28,7 +28,7 @@ namespace QM_CloneSort
 
         public static bool TryMoveByProfileId(MercenariesScreen screen, string profileId, int delta)
         {
-            if (screen == null || delta == 0 || CloneSortState.SortMode != SortMode.Manual)
+            if (screen == null || delta == 0 || CloneSortState.SortMode != SortMode.Manual || CloneSortState.IsManualLocked)
             {
                 return false;
             }
@@ -47,7 +47,7 @@ namespace QM_CloneSort
 
         public static bool TryMoveSelected(SelectMercenaryScreen screen, int delta)
         {
-            if (screen == null || delta == 0 || CloneSortState.SortMode != SortMode.Manual)
+            if (screen == null || delta == 0 || CloneSortState.SortMode != SortMode.Manual || CloneSortState.IsManualLocked)
             {
                 return false;
             }
@@ -66,7 +66,7 @@ namespace QM_CloneSort
 
         public static bool TryMoveSelected(MercenariesScreen screen, int delta)
         {
-            if (screen == null || delta == 0 || CloneSortState.SortMode != SortMode.Manual)
+            if (screen == null || delta == 0 || CloneSortState.SortMode != SortMode.Manual || CloneSortState.IsManualLocked)
             {
                 return false;
             }

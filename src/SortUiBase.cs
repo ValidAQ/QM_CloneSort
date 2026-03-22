@@ -55,7 +55,39 @@ namespace QM_CloneSort
                 return;
             }
 
-            _sortButton.InitCaption("Sort: " + CloneSortState.SortMode);
+            string locKey;
+            if (CloneSortState.IsManualLocked)
+            {
+                locKey = "qm_clonesort.sort_button.locked";
+            }
+            else
+            {
+                switch (CloneSortState.SortMode)
+                {
+                    case SortMode.NameAsc:  locKey = "qm_clonesort.sort_button.name_asc";  break;
+                    case SortMode.NameDesc: locKey = "qm_clonesort.sort_button.name_desc"; break;
+                    case SortMode.RankDesc: locKey = "qm_clonesort.sort_button.rank_desc"; break;
+                    default:                locKey = "qm_clonesort.sort_button.manual";    break;
+                }
+            }
+
+            string label = Localization.Get(locKey);
+            if (string.IsNullOrEmpty(label) || label == locKey)
+                label = GetFallbackLabel(locKey);
+
+            _sortButton.InitCaption(label);
+        }
+
+        private static string GetFallbackLabel(string locKey)
+        {
+            switch (locKey)
+            {
+                case "qm_clonesort.sort_button.locked":    return "Sort: Locked";
+                case "qm_clonesort.sort_button.name_asc":  return "Sort: Name A-Z";
+                case "qm_clonesort.sort_button.name_desc": return "Sort: Name Z-A";
+                case "qm_clonesort.sort_button.rank_desc": return "Sort: Rank";
+                default:                                   return "Sort: Manual";
+            }
         }
 
         private static void ClearHotkey(CommonButton button)

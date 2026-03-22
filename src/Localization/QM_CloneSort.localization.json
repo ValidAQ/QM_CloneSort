@@ -1,0 +1,67 @@
+{
+  "qm_clonesort.sort_button.manual": {
+    "en": "Sort: Manual",
+    "ru": "Сортировка: Ручная",
+    "de": "Sortieren: Manuell",
+    "fr": "Tri: Manuel",
+    "es": "Orden: Manual",
+    "pl": "Sortuj: Ręcznie",
+    "tr": "Sıralama: Manuel",
+    "pt": "Ordenar: Manual",
+    "ko": "정렬: 수동",
+    "ja": "ソート: 手動",
+    "zh": "排序: 手动"
+  },
+  "qm_clonesort.sort_button.locked": {
+    "en": "Sort: Locked",
+    "ru": "Сортировка: Зафиксирована",
+    "de": "Sortieren: Gesperrt",
+    "fr": "Tri: Verrouillé",
+    "es": "Orden: Bloqueado",
+    "pl": "Sortuj: Zablokowane",
+    "tr": "Sıralama: Kilitli",
+    "pt": "Ordenar: Bloqueado",
+    "ko": "정렬: 잠김",
+    "ja": "ソート: ロック",
+    "zh": "排序: 锁定"
+  },
+  "qm_clonesort.sort_button.name_asc": {
+    "en": "Sort: Name A-Z",
+    "ru": "Сортировка: Имя А-Я",
+    "de": "Sortieren: Name A-Z",
+    "fr": "Tri: Nom A-Z",
+    "es": "Orden: Nombre A-Z",
+    "pl": "Sortuj: Nazwa A-Z",
+    "tr": "Sıralama: İsim A-Z",
+    "pt": "Ordenar: Nome A-Z",
+    "ko": "정렬: 이름 A-Z",
+    "ja": "ソート: 名前 A-Z",
+    "zh": "排序: 姓名 A-Z"
+  },
+  "qm_clonesort.sort_button.name_desc": {
+    "en": "Sort: Name Z-A",
+    "ru": "Сортировка: Имя Я-А",
+    "de": "Sortieren: Name Z-A",
+    "fr": "Tri: Nom Z-A",
+    "es": "Orden: Nombre Z-A",
+    "pl": "Sortuj: Nazwa Z-A",
+    "tr": "Sıralama: İsim Z-A",
+    "pt": "Ordenar: Nome Z-A",
+    "ko": "정렬: 이름 Z-A",
+    "ja": "ソート: 名前 Z-A",
+    "zh": "排序: 姓名 Z-A"
+  },
+  "qm_clonesort.sort_button.rank_desc": {
+    "en": "Sort: Rank",
+    "ru": "Сортировка: Ранг",
+    "de": "Sortieren: Rang",
+    "fr": "Tri: Rang",
+    "es": "Orden: Rango",
+    "pl": "Sortuj: Ranga",
+    "tr": "Sıralama: Rütbe",
+    "pt": "Ordenar: Posto",
+    "ko": "정렬: 계급",
+    "ja": "ソート: ランク",
+    "zh": "排序: 等级"
+  }
+}

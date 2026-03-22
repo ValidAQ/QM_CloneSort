@@ -33,14 +33,14 @@ namespace QM_CloneSort
                 CreateMoveUpIcon();
             }
 
-            bool manual = CloneSortState.SortMode == SortMode.Manual;
+            bool showUpButton = CloneSortState.SortMode == SortMode.Manual && !CloneSortState.IsManualLocked;
             if (_upIcon != null)
             {
-                _upIcon.gameObject.SetActive(manual);
-                _upIcon.SetInteractable(manual);
+                _upIcon.gameObject.SetActive(showUpButton);
+                _upIcon.SetInteractable(showUpButton);
             }
 
-            ApplyRankShift(manual);
+            ApplyRankShift(showUpButton);
         }
 
         private void OnDestroy()
@@ -114,14 +114,14 @@ namespace QM_CloneSort
 
         private void LateUpdate()
         {
-            bool manual = CloneSortState.SortMode == SortMode.Manual;
-            if (_upIcon != null && _upIcon.gameObject.activeSelf != manual)
+            bool showUpButton = CloneSortState.SortMode == SortMode.Manual && !CloneSortState.IsManualLocked;
+            if (_upIcon != null && _upIcon.gameObject.activeSelf != showUpButton)
             {
-                _upIcon.gameObject.SetActive(manual);
-                _upIcon.SetInteractable(manual);
+                _upIcon.gameObject.SetActive(showUpButton);
+                _upIcon.SetInteractable(showUpButton);
             }
 
-            ApplyRankShift(manual);
+            ApplyRankShift(showUpButton);
         }
 
         private void CacheOriginalRankPositions()

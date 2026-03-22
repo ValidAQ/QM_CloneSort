@@ -71,9 +71,31 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Localization\QM_CloneSort.localization.json">
+      <LogicalName>QM_CloneSort.localization.json</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <!-- Optional: Mod Configuration Menu (MCM) integration. -->
+  <PropertyGroup>
+    <McmDllPath Condition="Exists('$(ProjectDir)lib\MCM.dll')">$(ProjectDir)lib\MCM.dll</McmDllPath>
+    <McmDllPath Condition="'$(McmDllPath)' == '' AND Exists('$(WorkshopRoot)3469678797\MCM.dll')">$(WorkshopRoot)3469678797\MCM.dll</McmDllPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(McmDllPath)' != ''">
+    <DefineConstants>$(DefineConstants);MCM_PRESENT</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(McmDllPath)' != ''">
+    <Reference Include="MCM">
+      <HintPath>$(McmDllPath)</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.2" ExcludeAssets="runtime" />
     <PackageReference Include="Lib.harmony" Version="2.3.3" ExcludeAssets="runtime" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" ExcludeAssets="runtime" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" ExcludeAssets="runtime" />
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" ExcludeAssets="runtime" />
   </ItemGroup>
 
