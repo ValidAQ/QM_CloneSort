@@ -61,7 +61,7 @@ namespace QM_CloneSort
 			};
 
 			ModConfigMenuAPI.RegisterModConfig(
-				modName: "QM_CloneSort",
+				modName: "Clone Sort",
 				configData: configValues,
 				OnConfigSaved: (Dictionary<string, object> currentConfig, out string feedback) =>
 				{

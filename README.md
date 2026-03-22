@@ -51,6 +51,9 @@ Thanks to nbk_redspy, whose mod sources were very valuable for learning how to m
 
 # Changelog
 
+## 1.1.1
+* Replaced mod ID with proper mod name in MCM configuration list.
+
 ## 1.1.0
 * Added localization support for sort button labels. Currently machine translated - corrections welcome.
 * Added mod configuration with two configurable sorting modes (*Manual* and *Manual and Auto*) and toggles to enable/disable name and rank sorting.
