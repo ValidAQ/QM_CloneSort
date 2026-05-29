@@ -67,7 +67,9 @@ namespace QM_CloneSort
                     case SortMode.NameAsc:  locKey = "qm_clonesort.sort_button.name_asc";  break;
                     case SortMode.NameDesc: locKey = "qm_clonesort.sort_button.name_desc"; break;
                     case SortMode.RankDesc: locKey = "qm_clonesort.sort_button.rank_desc"; break;
-                    default:                locKey = "qm_clonesort.sort_button.manual";    break;
+                    case SortMode.ClassAsc:  locKey = "qm_clonesort.sort_button.class_asc";  break;
+                    case SortMode.ClassDesc: locKey = "qm_clonesort.sort_button.class_desc"; break;
+                    default:                 locKey = "qm_clonesort.sort_button.manual";     break;
                 }
             }
 
@@ -86,7 +88,9 @@ namespace QM_CloneSort
                 case "qm_clonesort.sort_button.name_asc":  return "Sort: Name A-Z";
                 case "qm_clonesort.sort_button.name_desc": return "Sort: Name Z-A";
                 case "qm_clonesort.sort_button.rank_desc": return "Sort: Rank";
-                default:                                   return "Sort: Manual";
+                case "qm_clonesort.sort_button.class_asc":  return "Sort: Class A-Z";
+                case "qm_clonesort.sort_button.class_desc": return "Sort: Class Z-A";
+                default:                                    return "Sort: Manual";
             }
         }
 

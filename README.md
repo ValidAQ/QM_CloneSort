@@ -51,6 +51,9 @@ Thanks to nbk_redspy, whose mod sources were very valuable for learning how to m
 
 # Changelog
 
+## 1.2.0
+* Added a class sorting mode.
+
 ## 1.1.1
 * Replaced mod ID with proper mod name in MCM configuration list.
 

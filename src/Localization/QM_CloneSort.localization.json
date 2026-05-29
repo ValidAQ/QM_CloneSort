@@ -63,5 +63,31 @@
     "ko": "정렬: 계급",
     "ja": "ソート: ランク",
     "zh": "排序: 等级"
+  },
+  "qm_clonesort.sort_button.class_asc": {
+    "en": "Sort: Class A-Z",
+    "ru": "Сортировка: Класс А-Я",
+    "de": "Sortieren: Klasse A-Z",
+    "fr": "Tri: Classe A-Z",
+    "es": "Orden: Clase A-Z",
+    "pl": "Sortuj: Klasa A-Z",
+    "tr": "Sıralama: Sınıf A-Z",
+    "pt": "Ordenar: Classe A-Z",
+    "ko": "정렬: 클래스 A-Z",
+    "ja": "ソート: クラス A-Z",
+    "zh": "排序: 职业 A-Z"
+  },
+  "qm_clonesort.sort_button.class_desc": {
+    "en": "Sort: Class Z-A",
+    "ru": "Сортировка: Класс Я-А",
+    "de": "Sortieren: Klasse Z-A",
+    "fr": "Tri: Classe Z-A",
+    "es": "Orden: Clase Z-A",
+    "pl": "Sortuj: Klasa Z-A",
+    "tr": "Sıralama: Sınıf Z-A",
+    "pt": "Ordenar: Classe Z-A",
+    "ko": "정렬: 클래스 Z-A",
+    "ja": "ソート: クラス Z-A",
+    "zh": "排序: 职业 Z-A"
   }
 }

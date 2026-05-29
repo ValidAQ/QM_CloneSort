@@ -58,6 +58,14 @@ namespace QM_CloneSort
 					defaultValue: true,
 					tooltip: $"Enable sorting by rank in {manualAndAutoSortName} mode.",
 					label: "Enable Rank Sorting"),
+
+				new ConfigValue(
+					key: "EnableClassSort",
+					value: Plugin.Config.EnableClassSort,
+					header: "Sorting",
+					defaultValue: true,
+					tooltip: $"Enable sorting by class in {manualAndAutoSortName} mode.",
+					label: "Enable Class Sorting"),
 			};
 
 			ModConfigMenuAPI.RegisterModConfig(
@@ -79,6 +87,8 @@ namespace QM_CloneSort
 							Plugin.Config.EnableNameSort = Convert.ToBoolean(ensVal);
 						if (currentConfig.TryGetValue("EnableRankSort", out var ersVal))
 							Plugin.Config.EnableRankSort = Convert.ToBoolean(ersVal);
+						if (currentConfig.TryGetValue("EnableClassSort", out var ecsVal))
+							Plugin.Config.EnableClassSort = Convert.ToBoolean(ecsVal);
 
 						CloneSortState.ResetToValidMode();
 						Plugin.Config.Save(Plugin.ConfigDirectories.ConfigPath);

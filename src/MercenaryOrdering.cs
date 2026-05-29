@@ -48,6 +48,20 @@ namespace QM_CloneSort
                         .ToList();
                     break;
 
+                case SortMode.ClassAsc:
+                    sorted = mercenaries.Values
+                        .OrderBy(GetClassDisplayName, StringComparer.CurrentCultureIgnoreCase)
+                        .ThenBy(GetDisplayName, StringComparer.CurrentCultureIgnoreCase)
+                        .ToList();
+                    break;
+
+                case SortMode.ClassDesc:
+                    sorted = mercenaries.Values
+                        .OrderByDescending(GetClassDisplayName, StringComparer.CurrentCultureIgnoreCase)
+                        .ThenBy(GetDisplayName, StringComparer.CurrentCultureIgnoreCase)
+                        .ToList();
+                    break;
+
                 default:
                     return;
             }
@@ -149,6 +163,19 @@ namespace QM_CloneSort
             {
                 return mercenary.ProfileId ?? string.Empty;
             }
+
+            return localized;
+        }
+
+        private static string GetClassDisplayName(Mercenary mercenary)
+        {
+            if (mercenary == null || string.IsNullOrEmpty(mercenary.MercClassId))
+                return string.Empty;
+
+            string key = "class." + mercenary.MercClassId;
+            string localized = Localization.Get(key);
+            if (string.IsNullOrEmpty(localized) || localized == key)
+                return mercenary.MercClassId;
 
             return localized;
         }

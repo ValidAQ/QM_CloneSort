@@ -17,6 +17,7 @@ namespace QM_CloneSort
         public SortingModeOptions SortingMode { get; set; } = SortingModeOptions.ManualAndAuto;
         public bool EnableNameSort { get; set; } = true;
         public bool EnableRankSort { get; set; } = true;
+        public bool EnableClassSort { get; set; } = true;
 
         public static ModConfig LoadConfig(string configPath)
         {

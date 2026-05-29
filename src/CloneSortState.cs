@@ -36,6 +36,11 @@ namespace QM_CloneSort
             {
                 modes.Add(SortMode.RankDesc);
             }
+            if (config.EnableClassSort)
+            {
+                modes.Add(SortMode.ClassAsc);
+                modes.Add(SortMode.ClassDesc);
+            }
 
             int current = modes.IndexOf(SortMode);
             SortMode = modes[(current + 1) % modes.Count];
@@ -70,6 +75,8 @@ namespace QM_CloneSort
             if ((SortMode == SortMode.NameAsc || SortMode == SortMode.NameDesc) && !config.EnableNameSort)
                 SortMode = SortMode.Manual;
             else if (SortMode == SortMode.RankDesc && !config.EnableRankSort)
+                SortMode = SortMode.Manual;
+            else if ((SortMode == SortMode.ClassAsc || SortMode == SortMode.ClassDesc) && !config.EnableClassSort)
                 SortMode = SortMode.Manual;
         }
 
